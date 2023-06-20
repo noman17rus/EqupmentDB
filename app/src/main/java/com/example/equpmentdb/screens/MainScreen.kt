@@ -28,7 +28,7 @@ fun MainScreen() {
         ) {
             repeat(20) {
                 item {
-                    val card = Card(name = "Dag", dataStart = null, dateEnd = null, period = 1)
+                    val card = Card(name = "Dag", dataStart = null, dateEnd = null, period = 1, daysLeft = 300)
                     CardEquipment(card)
                 }
             }

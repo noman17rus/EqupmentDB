@@ -6,6 +6,7 @@ data class Card(
     val name: String,
     val dataStart: LocalDate?,
     val dateEnd: LocalDate?,
-    val period: Int
+    val period: Int,
+    val daysLeft: Int
 ) {
 }
