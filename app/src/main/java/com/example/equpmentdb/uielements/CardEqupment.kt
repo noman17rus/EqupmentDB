@@ -16,10 +16,11 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.equpmentdb.data.Card
 
-@Preview
+
 @Composable
-fun CardEquipment() {
+fun CardEquipment(card: Card) {
     val fontSize = 18.sp
     val padding = 4.dp
     Card(
@@ -30,7 +31,7 @@ fun CardEquipment() {
     ) {
         Column(modifier = Modifier.padding(padding)) {
             Text(
-                text = "TITTLE",
+                text = card.name,
                 fontSize = fontSize,
                 fontFamily = FontFamily.Serif,
                 fontStyle = FontStyle.Italic
@@ -40,13 +41,13 @@ fun CardEquipment() {
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text(text = "Hello: ", fontSize = fontSize)
+                    Text(text = "Date of start: ${card.dataStart.toString()}", fontSize = fontSize)
                 }
                 Column(modifier = Modifier.weight(1f)) {
-                    Text(text = "Android: ", fontSize = fontSize)
+                    Text(text = "Date of end: ${card.dateEnd.toString()}", fontSize = fontSize)
                 }
             }
-            Text(text = "Period: , days left: ")
+            Text(text = "Days left: ${card.period}")
         }
     }
 }

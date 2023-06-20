@@ -9,8 +9,11 @@ import androidx.compose.material3.FabPosition
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.example.equpmentdb.data.Card
 import com.example.equpmentdb.uielements.CardEquipment
 import com.example.equpmentdb.uielements.FAB
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -25,7 +28,8 @@ fun MainScreen() {
         ) {
             repeat(20) {
                 item {
-                    CardEquipment()
+                    val card = Card(name = "Dag", dataStart = null, dateEnd = null, period = 1)
+                    CardEquipment(card)
                 }
             }
 
