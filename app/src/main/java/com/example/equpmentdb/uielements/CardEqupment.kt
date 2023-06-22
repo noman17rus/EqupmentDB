@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -36,9 +37,11 @@ fun CardEquipment(card: Card) {
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Box(modifier = Modifier.weight(0.85f)) {
-                Column(modifier = Modifier
-                    .padding(padding)
-                    .fillMaxWidth()) {
+                Column(
+                    modifier = Modifier
+                        .padding(padding)
+                        .fillMaxWidth()
+                ) {
                     Text(
                         text = "card.name",
                         fontSize = 30.sp,
@@ -50,10 +53,16 @@ fun CardEquipment(card: Card) {
                         horizontalArrangement = Arrangement.Start
                     ) {
                         Column(modifier = Modifier) {
-                            Text(text = "Date of start: ${card.dataStart.toString()}", fontSize = fontSize)
+                            Text(
+                                text = "Date of start: ${card.dataStart.toString()}",
+                                fontSize = fontSize
+                            )
                         }
                         Column(modifier = Modifier) {
-                            Text(text = "Date of end: ${card.dateEnd.toString()}", fontSize = fontSize)
+                            Text(
+                                text = "Date of end: ${card.dateEnd.toString()}",
+                                fontSize = fontSize
+                            )
                         }
                     }
                     Text(text = "Period: ${card.period}")
@@ -61,10 +70,9 @@ fun CardEquipment(card: Card) {
                 }
             }
             Box(modifier = Modifier.weight(0.15f).fillMaxSize(), contentAlignment = Alignment.Center) {
-                Icon(Icons.Default.Delete, contentDescription = null, modifier = Modifier.clickable {  }.fillMaxSize())
+                Icon(Icons.Default.Delete, contentDescription = null, modifier = Modifier.clickable {  }.size(46.dp))
             }
 
         }
-
     }
 }
