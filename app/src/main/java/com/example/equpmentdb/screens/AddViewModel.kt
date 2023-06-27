@@ -54,6 +54,7 @@ class AddViewModel(val database: EqRepository) : ViewModel() {
 }
 
 
+
 class AddViewModelFactory(private val _database: EqRepository) :
     ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
