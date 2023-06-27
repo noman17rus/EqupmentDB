@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -23,10 +22,11 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.equpmentdb.data.Card
+import com.example.equpmentdb.data.Equipment
+import com.example.equpmentdb.screens.AddViewModel
 
 @Composable
-fun CardEquipment(card: Card) {
+fun CardEquipment(equipment: Equipment, viewModel: AddViewModel) {
     val fontSize = 18.sp
     val padding = 4.dp
     Card(
@@ -54,23 +54,25 @@ fun CardEquipment(card: Card) {
                     ) {
                         Column(modifier = Modifier) {
                             Text(
-                                text = "Date of start: ${card.dataStart.toString()}",
+                                text = "Date of start: ${equipment.dataStart}",
                                 fontSize = fontSize
                             )
                         }
                         Column(modifier = Modifier) {
                             Text(
-                                text = "Date of end: ${card.dateEnd.toString()}",
+                                text = "Date of end: ${equipment.dateEnd}",
                                 fontSize = fontSize
                             )
                         }
                     }
-                    Text(text = "Period: ${card.period}")
-                    Text(text = "Days left: ${card.daysLeft}")
+                    Text(text = "Period: ${equipment.period}")
+                    Text(text = "Days left: ${equipment.daysLeft}")
                 }
             }
             Box(modifier = Modifier.weight(0.15f).fillMaxSize(), contentAlignment = Alignment.Center) {
-                Icon(Icons.Default.Delete, contentDescription = null, modifier = Modifier.clickable {  }.size(46.dp))
+                Icon(Icons.Default.Delete, contentDescription = null, modifier = Modifier.clickable {
+                    viewModel.deleteEq(equipment)
+                }.size(46.dp))
             }
 
         }

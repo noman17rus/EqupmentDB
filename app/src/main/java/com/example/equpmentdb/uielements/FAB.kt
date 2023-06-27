@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 fun FAB() {
     FloatingActionButton(
         onClick = { /*TODO*/ },
-        modifier = Modifier.size(40.dp),
+        modifier = Modifier.size(50.dp),
         shape = ShapeDefaults.Medium
     ) {
         Icon(Icons.Default.Add, contentDescription = null)
